@@ -9,6 +9,8 @@ SELECT
     users.first_name,
     users.last_name,
     users.email
+
+    
 FROM bookings
 INNER JOIN users ON bookings.guest_id = users.user_id;
 
@@ -19,9 +21,9 @@ SELECT
     properties.location,
     reviews.review_id,
     reviews.rating,
-    reviews.comment
+    reviews.comment    
 FROM properties
-LEFT JOIN reviews ON properties.property_id = reviews.property_id;
+LEFT JOIN reviews.comment ON properties.property_id = reviews.property_id;
 
 -- FULL OUTER JOIN: Retrieve all users and all bookings, even if the user has no booking or a booking is not linked to a user
 SELECT 
